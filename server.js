@@ -6,7 +6,7 @@ const ticketRoutes = require("./routes/ticket.routes");
 const path = require("path");
 require("dotenv").config();
 
-const uri = process.env.ATLAS_URI || "mongodb://localhost:27017/circus";
+const uri = process.env.mongoURI || "mongodb://localhost:27017/circus";
 // Connection for Mongoose
 const connect = () => {
   return mongoose
