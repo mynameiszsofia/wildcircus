@@ -1,0 +1,80 @@
+@import "../../utils/variables.scss";
+.header {
+  height: 20px;
+  padding: 1em 4em;
+  background: $solidBrown;
+  color: $pureWhite;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation {
+  display: flex;
+}
+a {
+  font-size: 0.9em;
+  color: $pureWhite;
+  text-decoration: none;
+}
+a:hover{
+    color: $lightPink;
+}
+
+.header-link {
+  text-align: center;
+  display: none;
+  padding: 0 1em;
+  z-index: 100;
+  list-style: none;
+  display: flex;
+  li {
+    padding: 13px 9px 13px;
+  }
+}
+
+.hamburger-menu {
+  margin: 0 40px 0 0;
+  font-size: 26px;
+  line-height: 50px;
+  display: none;
+}
+
+.active {
+  font-weight: 700;
+}
+
+@media (max-width: 1070px) {
+  .header-link {
+    overflow: hidden;
+    transition: 0.5s ease-out;
+    z-index: 0;
+    opacity: 0.8;
+    height: 0;
+    position: absolute;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 82px;
+    background: $pureWhite;
+    a {
+      display: none;
+    }
+  }
+  .open {
+    display: flex;
+    height: 300px;
+    opacity: 1;
+    background-color: $solidBrown;
+    a {
+      opacity: 1;
+      display: flex;
+    }
+  }
+
+  .hamburger-menu {
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
+  }
+}
