@@ -30,7 +30,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-var port = process.env.PORT || 5000;
-app.listen(5000, () => {
+var port = process.env.PORT;
+app.listen(port, "0.0.0.0", () => {
   console.log(`app is running on ${port}`);
 });
