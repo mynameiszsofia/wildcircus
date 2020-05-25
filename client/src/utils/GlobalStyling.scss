@@ -1,71 +1,91 @@
 @import "./variables.scss";
 
 .mainContainer {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 table {
-    margin: auto;
+  margin: auto;
 }
 .welcome-container {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.text-button-container {
+  margin-top: 3em;
+  width: 60%;
+}
+
+.form-container {
+  width: 80%;
+  margin: auto;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input[type="text"] {
+  background-color: $coral;
+  color: $pureBlack;
+  border: none;
+  border-radius: $border-radius;
+  padding: 0.8em;
+  width: 80%;
+  margin-bottom: 1em;
+}
+::placeholder {
+  color: $pureBlack;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $pureBlack;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $pureBlack;
+}
+
+li {
+  list-style-type: none;
+}
+ul {
+  text-align: left;
+  margin: 0.5em;
+}
+.table-rows {
+  width: 60%;
+  margin: auto;
+}
+.MuiTypography-body1 {
+  width: 100%;
+}
+.gallery-container {
+  width: 80%;
+  margin: auto;
+}
+.MuiTableContainer-root {
+  margin-top: 2em;
+}
+
+@media (max-width: 1070px) {
+  .MuiButtonBase-root {
+    position: inherit !important;
+  }
+}
+
+@media (max-width: 800px) {
+  #gallery {
     flex-wrap: wrap;
-    justify-content: space-evenly;
+  }
+  .makeStyles-media-2 {
+    height: 200px !important;
+    width: 200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
-.text-button-container{
-    margin-top: 3em;
-    width: 60%;
-}
-
-.form-container{
-    width: 80%;
-    margin: auto;
-}
-.input-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-input[type=text] {
-    background-color: $coral;
-    color: $pureBlack;
-    border: none;
-    border-radius: $border-radius;
-    padding: 0.8em;
-    width: 80%;
-    margin-bottom: 1em;
-  }
-  ::placeholder {
-    color: $pureBlack;
-    opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: $pureBlack;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-   color: $pureBlack;
-  }
-
-  li{
-      list-style-type: none;
-  }
-  ul{
-      text-align: left;
-      margin: 0.5em;
-  }
-  .table-rows{
-      width: 60%;
-      margin:auto;
-  }
-  .MuiTypography-body1{
-      width: 100%;
-  }
-  .gallery-container{
-      width: 80%;
-      margin: auto;
-  }
-  .MuiTableContainer-root{
-    margin-top: 2em;
-  }
