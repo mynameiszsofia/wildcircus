@@ -14,10 +14,11 @@ function Header() {
         <div>Wildcode Circus</div>
       </Link>
       <div className={menuOpen ? "open header-link" : "header-link"}>
-        {links.map((link) => {
+        {links.map((link, index) => {
           return (
-            <Link to={`/${link}`}>
+            <Link to={`/${link}`} key={index}>
               <li
+                key={index}
                 className={
                   activePage === link
                     ? "active header-link-item"

@@ -16,11 +16,10 @@ table {
   margin-top: 3em;
   width: 60%;
 }
-
+/* 
 .form-container {
-  width: 80%;
   margin: auto;
-}
+} */
 .input-container {
   display: flex;
   flex-direction: column;
@@ -70,6 +69,13 @@ ul {
 }
 .MuiTableContainer-root {
   margin-top: 2em;
+}
+/* 
+.MuiExpansionPanel-root {
+  position: inherit !important;
+} */
+.MuiExpansionPanelDetails-root {
+  justify-content: center;
 }
 
 @media (max-width: 1070px) {

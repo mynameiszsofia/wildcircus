@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+/* const mongoose = require("mongoose");
 
 const ticketSchema = new mongoose.Schema({
     email: {
@@ -11,4 +11,4 @@ const ticketSchema = new mongoose.Schema({
 });
 
 const TicketSchema = mongoose.model("ticketSchema", ticketSchema);
-module.exports = TicketSchema;
+module.exports = TicketSchema; */

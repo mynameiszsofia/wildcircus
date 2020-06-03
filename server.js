@@ -3,10 +3,10 @@ const mongoose = require("mongoose");
 const app = express();
 const circusRoutes = require("./routes/circus.routes");
 const ticketRoutes = require("./routes/ticket.routes");
-const path = require("path");
-require("dotenv").config();
+/* const path = require("path"); */
+/* require("dotenv").config(); */
 
-const uri = process.env.mongoURI; /* || "mongodb://localhost:27017/circus" */
+const uri = /* process.env.mongoURI || */ "mongodb://localhost:27017/circus";
 // Connection for Mongoose
 const connect = () => {
   return mongoose
@@ -24,13 +24,17 @@ app.use(express.json());
 
 app.use("/circus", circusRoutes);
 app.use("/", ticketRoutes);
-
+/* 
 app.use(express.static(path.join(__dirname, "client", "build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
+}); */
 
-var port = process.env.PORT;
-app.listen(port, "0.0.0.0", () => {
+/* var port = process.env.PORT; */
+var port = 5000;
+/* app.listen(port , "0.0.0.0", () => {
+  console.log(`app is running on ${port}`);
+}); */
+app.listen(port, () => {
   console.log(`app is running on ${port}`);
 });

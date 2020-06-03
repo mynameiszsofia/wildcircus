@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../utils/GlobalStyling.scss";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -8,12 +8,11 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-function Arts(props) {
+function Arts() {
   const [circus, setCircus] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [title, setTitle] = React.useState("");
   const [date, setDate] = React.useState("");
-  const [id, setId] = React.useState("");
   const [errors, setErrors] = React.useState("");
 
   const fetchData = React.useCallback(() => {
@@ -48,23 +47,6 @@ function Arts(props) {
 
   const deleteItem = (itemId) => {
     setLoading(true);
-    // Don't need even.prevent default cause it's not a form
-    // event.preventDefault();
-
-    // const options = {
-    //     method: 'delete',
-    //     // headers: {
-    //     //     'Content-Type': 'application/json'
-    //     // },
-    //     // I don't think you need body here
-    //     // body: JSON.stringify({ id: props.match.params.id})
-
-    // }
-    // console.log(props.match.params.id)
-    // there is no props.match.params.id in the url
-
-    // the id go in the url of the fetch not in the body
-    // ah ok nevermind it was here...
     fetch(`/circus/${itemId}`, { method: "delete" })
       .then((res) => res.json())
       .then(setLoading(false))
