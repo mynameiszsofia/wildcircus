@@ -9,8 +9,14 @@ function Main() {
             <h1>Welcome in Wildcode wonderland!</h1>
             <div className="welcome-container">
                 <div className="text-button-container">
-                    <p className="text-container">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <Button to={"/circus"}> See shows</Button>
+                    <h2>We are looking for some new talents</h2>
+                    <p className="text-container">
+                        Would you like to be a part of our team ?
+                        Have you got a performance and a courage to show it for us ?
+                    </p>
+                    <h2 style={{ color: "#7A1B1B", fontWeight: "800" }}>NOW YOU HAVE A CHANCE!</h2>
+                    <p>We are looking for someone who have motivation, who would like to make people happy with performance.</p>
+                    <Button variant="outline" to={"/talents"}>Let's join us!</Button>
                 </div>
                 <div>
                     <img src={circus} alt="circus" width="400px" />

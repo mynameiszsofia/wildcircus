@@ -52,8 +52,11 @@ const useStyles = makeStyles({
     /* maxWidth: 345, */
   },
   media: {
+    width: 200,
     height: 240,
     margin: "0.5em",
+    marginLeft: "auto",
+    marginRight: "auto"
   },
 });
 
@@ -62,7 +65,7 @@ export default function MediaCard() {
 
   return (
     <div className="gallery-container">
-      <h1>Our talents</h1>
+      <h1>Our team</h1>
       <Card style={{ display: "flex" }} id="gallery" className={classes.root}>
         {data.map((t, index) => {
           return (

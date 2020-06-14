@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import Button from "../Buttons/button";
 
 function Header() {
-  const [activePage, setActivePage] = React.useState("About Us");
+  const [activePage, setActivePage] = React.useState("home");
   const [menuOpen, setMenuOpen] = React.useState(false);
-  const links = ["aboutus", "circus", "gallery", "ticket"];
+  const links = ["home", "talents", "team"];
 
   return (
     <header className="header">
-      <Link className="header-logo-container" to="/aboutus">
+      <Link className="header-logo-container" to="/home">
         <div>Wildcode Circus</div>
       </Link>
       <div className={menuOpen ? "open header-link" : "header-link"}>

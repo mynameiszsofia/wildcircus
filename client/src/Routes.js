@@ -13,10 +13,10 @@ export default class Routes extends Component {
         <Header />
         <Switch>
           <Route path="/" exact component={Main} />
-          <Route path="/aboutus" exact component={Main} />
-          <Route path="/circus" exact component={Arts} />
-          <Route path="/ticket" exact component={Tickets} />
-          <Route path="/gallery" exact component={Gallery} />
+          <Route path="/home" exact component={Main} />
+          <Route path="/talents" exact component={Arts} />
+          <Route path="/booking" exact component={Tickets} />
+          <Route path="/team" exact component={Gallery} />
         </Switch>
       </Router>
     );

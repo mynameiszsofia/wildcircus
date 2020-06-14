@@ -8,6 +8,8 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
+import Button from "../../components/Buttons/button"
+
 function Arts() {
   const [circus, setCircus] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
@@ -75,7 +77,7 @@ function Arts() {
   }))(TableRow);
   const useStyles = makeStyles({
     table: {
-      width: 756,
+      width: "90%",
     },
   });
   const classes = useStyles();
@@ -83,82 +85,61 @@ function Arts() {
   return loading ? (
     <h1>Loading...</h1>
   ) : (
-    <div className="mainContainer">
-      <h1>Circus acts </h1>
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <h2>Add your shows:</h2>
-          <div className="input-container">
-            <label>Title: </label>
-            <input
-              type="text"
-              placeholder="name of your show"
-              value={title}
-              onChange={(event) => setTitle(event.target.value)}
-            />
-          </div>
-          <div className="input-container">
-            <label>Date: </label>
-            <input
-              type="text"
-              placeholder="date of your show"
-              value={date}
-              onChange={(event) => setDate(event.target.value)}
-            />
-          </div>
-          <button type="submit">Send</button>
-        </form>
+      <div className="mainContainer">
+        <h1>Shows </h1>
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <h2>Would you like to be a part of our team?</h2>
+            <h3>Add your show name, and the date when you would like to perform, we will contant you!</h3>
+            <div className="input-container">
+              <label>Title: </label>
+              <input
+                type="text"
+                placeholder="name of your show"
+                value={title}
+                onChange={(event) => setTitle(event.target.value)}
+              />
+            </div>
+            <div className="input-container">
+              <label>Date: </label>
+              <input
+                type="text"
+                placeholder="date of your show"
+                value={date}
+                onChange={(event) => setDate(event.target.value)}
+              />
+            </div>
+            <Button variant="outline" type="submit">Send</Button>
+          </form>
+        </div>
+        <TableContainer>
+          <Table className={classes.table} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Title</StyledTableCell>
+                <StyledTableCell align="right">Date</StyledTableCell>
+                <StyledTableCell align="right"></StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {circus.map((t, index) => {
+                return (
+                  <StyledTableRow key={index}>
+                    <StyledTableCell component="th" scope="row">
+                      {t.title}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">{t.date}</StyledTableCell>
+                    <StyledTableCell align="right">
+                      <Button variant="outline" onClick={() => deleteItem(t._id)}>Delete</Button>
+                    </StyledTableCell>
+                  </StyledTableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </div>
-      <TableContainer>
-        <Table className={classes.table} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Title</StyledTableCell>
-              <StyledTableCell align="right">Date</StyledTableCell>
-              <StyledTableCell align="right"></StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {circus.map((t, index) => {
-              return (
-                <StyledTableRow key={index}>
-                  <StyledTableCell component="th" scope="row">
-                    {t.title}
-                  </StyledTableCell>
-                  <StyledTableCell align="right">{t.date}</StyledTableCell>
-                  <StyledTableCell align="right">
-                    <button onClick={() => deleteItem(t._id)}>Delete</button>
-                  </StyledTableCell>
-                </StyledTableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      {/*                 <table>
-                    <tr>
-                        <th>
-                            Title
-                    </th>
-                        <th>
-                            Date
-                    </th>
-                    </tr>
-
-                    {circus.map((t, index) => {
-                        return <>
-                            <tr>
-                                <td key={index}>{t.title}</td>
-                                <td>{t.date}</td>
-                                <td>
-                                    <button onClick={() => deleteItem(t._id)}>Delete</button>
-                                </td>
-                            </tr>
-                        </>
-                    })}
-                </table> */}
-    </div>
-  );
+    );
 }
 
 export default Arts;
